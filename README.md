@@ -42,10 +42,6 @@ ssh-copy-id <nama user>@<slave>
 ### 3.3 opencv
     pip install opencv-python
 
-## 4. Input bahan projek melalui github
-```sh
-git clone https://github.com/kaliadi/image-Stitching.git\
-```
 
 ## 5. Copy Seluruh File ke dalam Slave
 ### 5.1 Copy File
@@ -100,12 +96,26 @@ if status == 0:
 
 ## 7. Jalankan Image Stitching dengan MPI dan Multinode
 ### 7.1 Memasukan Semua File Ke dalam Folder MPI
-
+<img width="190" alt="123" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/397c30af-60c7-4420-8018-316a9c5c02cf">
+Disini Terlihat Terdapat 4 Directory Yang Berisi Hasil Dari Tiap Frame Yakni 1 2 3 4 video menjadi gambar dengan cara di frame
 ### 7.2 Waktu Running
-    mpiexec -n <jumlah slave> -host master,slave1,slave2,slave3 python3 /home/mpiuser/MPI/image_s.py -i /home/mpiuser/image-Stitching/images -o outputmulti.png
-![image](https://github.com/feliana444/ImageStitching-MPI/assets/145323449/8f9214f2-bd1b-4822-ba67-5e0c13d328ad)
-### 7.3 Melihat Hasil Output <br>
-Tampilan jika output sudah tersimpan
-![image](https://github.com/feliana444/ImageStitching-MPI/assets/145323449/3448576c-6cd8-45e4-80cd-17398e9847ad)
+    mpiexec -n <jumlah slave> -host master,slave1,slave2,slave3 python3 /home/mpiuser/MPI/image_stitching_simple.py -i /home/mpiuser/MPI/1 -o output1.png
+    mpiexec -n <jumlah slave> -host master,slave1,slave2,slave3 python3 /home/mpiuser/MPI/image_stitching_simple.py -i /home/mpiuser/MPI/2 -o output2.png
+    mpiexec -n <jumlah slave> -host master,slave1,slave2,slave3 python3 /home/mpiuser/MPI/image_stitching_simple.py -i /home/mpiuser/MPI/3 -o output3.png
+    mpiexec -n <jumlah slave> -host master,slave1,slave2,slave3 python3 /home/mpiuser/MPI/image_stitching_simple.py -i /home/mpiuser/MPI/4 -o output4.png
+<img width="464" alt="3" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/724e0984-1c0a-43b9-810c-89e121085475">
+<img width="464" alt="4" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/fc323232-8fe3-46d4-9940-3c66033c4808">
+<img width="467" alt="5" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/94e513d9-251c-4e6d-9d09-dd27a5759d77">
+<img width="470" alt="6" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/13d9fdb8-aa9d-40d0-b13b-162da4940a6c">
+
 ### 7.4 Output
-![image](https://github.com/feliana444/ImageStitching-MPI/assets/145323449/2abddfe2-001c-493a-965d-871f6e180928)
+Output Dari Video 1
+<img width="399" alt="1" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/3db845df-4101-422c-9be7-c050891eaa38">
+Output Dari Video 2
+<img width="304" alt="2" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/f7d5fa8f-b91c-4834-83cc-82fe508dd01d">
+Output Dari VIdeo 3
+![WhatsApp Image 2023-12-02 at 22 54 48](https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/cf4059ea-a8bf-42b5-b753-982631df2d23)
+Output Dari Video 4
+<img width="280" alt="44" src="https://github.com/Alzidan21/Image-Stitching-MPI/assets/105232288/27053c3e-4f92-4822-9802-e8489bdf1148">
+
+
